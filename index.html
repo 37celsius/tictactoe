@@ -21,7 +21,7 @@
 	<link href="css/style.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
 	<!-- jQuery -->
-	<link rel="stylesheet" href="https://code.jquery.com/jquery-2.1.3.min.js">
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
 	<!-- Viewport -->
 	<meta name="viewport" content="width=device-width">
@@ -32,17 +32,98 @@
 </head>
 <body>
 	<div class="container">
-		<header id="MainHeader">
+		<header id="MainHeader" class="clearFix">
 
-			<h1 class="logo-MainHeader">
-				Tic Tac Toe &ndash; Beta Version
+			<section id="Player-One">
+
+				<h2>
+					Player 1
+				</h2>
+
+				<ul class="record-Player-One empty-Record">
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				
+			</section>
+
+			<h1 class="logo-MainHeader-BG">
+				<span class="border-Left"></span>
+				<span class="logo-MainHeader">
+					Tic Tac Toe &ndash; Beta Version
+				</span>
+				<span class="border-Right"></span>				
 			</h1>
-			
+
+			<section id="Player-Two">
+				
+				<h2>
+					Player 2
+				</h2>
+
+				<ul class="record-Player-Two empty-Record">
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+
+			</section>			
+
 		</header>
-		<main id="MainContent">
+		<main id="MainContent" >
+
+			<ul id="GameBox">
+				<li class="empty-GameBox">
+
+				</li>
+
+				<li class="active-GameBox">
+						x
+				</li>
+
+				<li class="active-GameBox">
+						o
+				</li>
+
+				<li class="active-GameBox">
+						x
+				</li>
+
+				<li class="active-GameBox">
+						x
+				</li>
+
+				<li class="empty-GameBox">
+
+				</li>
+
+				<li class="active-GameBox">
+						x
+				</li>
+
+				<li class="active-GameBox">
+						x
+				</li>
+
+				<li class="active-GameBox">
+						x
+				</li>
+			</ul>
 			
+			<section class="userTurn">
+				<h3 id="Message">Next turn</h3>
+				<span class="userTurn-Next">x</span>
+			</section>
 		</main>
+
+		<footer>
+			<h5>&copy; 2015 Beta Ngadiman.</h5>			
+		</footer>
+
 	</div>
+
+	<script src="js/tictac.js"></script>
 	
 </body>
 </html>
