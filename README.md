@@ -19,4 +19,7 @@ Using:
 
 Hybrid of responsive and adaptive ( they only gave the student roughly 3 days... )
 
+### Mobile first approach, so not time to make the desktop version fancy, my recommendation will be view it from a mobile phone
+
+#### If it's not working, install chrome or update your chrome
 Game can be view at: http://37celsius.com.au/gawdi/tictactoe/
