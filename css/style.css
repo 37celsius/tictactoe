@@ -15,6 +15,17 @@ body {
 	  background: #6D217D;
 }
 
+a {
+	font-family: "Nunito", sans-serif;
+	font-weight: 400;
+	color: #fdfdfd;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #FAF13D;
+}
+
 ul {
 	list-style: none;
 	padding: 0;
@@ -28,8 +39,6 @@ ul {
   display: table;
   clear: both;
 }
-
-
 
 /* Container */
 
@@ -62,6 +71,10 @@ ul {
 	font-size: 1.313em; /* 21px/16px */
 	margin-bottom: 10px;
   	border-bottom: 1px solid #7F1A95;
+}
+
+#Player-One h2 {
+	color: #fdfdfd;
 }
 
 .logo-MainHeader-BG {
@@ -220,14 +233,17 @@ ul#GameBox{
 .userTurn h3 {
 	float: left;
 	text-transform: uppercase;
-	padding: 2% 5%;
-	font-size: 1.5em; /* 18px / 16px */
-	line-height: 2.5;
-	width: 70%;
+	padding: 2% 5% 2% 8%;
 	color: #E8F1FF;
 	position: relative;
 		background: #5176F4;
 		margin:0;
+		width: 25%;
+}
+
+i.fa.fa-lightbulb-o {
+  font-size: 2em;
+  line-height: 1.25;
 }
 
 .userTurn h3:after {
@@ -235,7 +251,7 @@ ul#GameBox{
 	content: " ";
 	width: 0;
 	height: 0;
-	border-width: 39px 0px 39px 29px;
+	border-width: 32px 0px 32px 20px;
 	border-style: solid;
 	border-color: rgb(69, 96, 188) transparent rgb(69, 96, 188);
 	top: 0;
@@ -243,31 +259,225 @@ ul#GameBox{
 }
 
 .userTurn-Next {
-	float: right;
-	width: 25%;
-	padding-left: 25px;
-	font-size: 3.75em; 
-	line-height: 1.135;
+	float: left;
+width: 75%;
+	padding: 12px 25px 12px 20px;
+	font-size: 1.125em; 
+	line-height: 1;
 	color: #21B7F5;
 	background: rgb(69, 96, 188);
 }
 
+footer {
+	color: #2F0147;
+	text-align: center;
+}
 
-/* Testing 
+/*POP UP STYLE */
 
-ul {
+#mask {
+    display: none;
+    background: #26102A;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    opacity: 0.85;
+    z-index: 999;
+}
+
+#DialogBox {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 300px;
+	height: 125px;
+	margin: auto;
+	z-index: 9999999;
+  background: rgb(228, 187, 236);
+padding: 5px 25px;
+  box-shadow: 1px 3px 0 rgba(13, 7, 22, 1);
+  border-radius: 6px;
+
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+}
+
+#DialogBox h2 {
+  color: #932AAA;
+  text-transform: uppercase;
+  margin: 12px 0;
+}
+
+#RogerButton {
+	  color: #fdfdfd;
+  border: 0;
+  background: rgb(112, 116, 237);
+  text-transform: uppercase;
+  padding: 5px 15px;
+  font-size: 1.5em;
+  border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+	.logo-MainHeader {
+		width: 38%;
+  		padding-bottom: 38%;
+	}
+	.border-Left, .border-Right {
+		padding-bottom: 38%;
+	}
+	.border-Left {
+		margin-right: 22%;
+	}
+
+	i.fa.fa-lightbulb-o{
+		font-size: 2.25em;
+	}
+
+	.userTurn h3:after {
+
+  border-width: 52px 0px 52px 20px;
+}
+
+	.userTurn-Next {
+		font-size: 2.15em;
+		padding: 14px 35px 14px 30px;
+	}
+	
+	ul#GameBox {
+		width: 78vw;
+		margin-top: 20px;
+	}
+
+	#GameBox li {
+		width: 24vw;
+		height: 24vw;
+		font-size: 9em;
+	}
+  
+}
+
+
+@media all and (min-width : 1025px){
+
+	.container {
+		width: 80%;
+		max-width: 1024px;
+	}
+
+	#MainHeader {
+		width: 35%;
+		float: left;
+		position: relative;
+		  background: rgb(147, 42, 170);
+	}
+
+	#MainContent {
+		  width: 60%;
+  float: left;
+    
+
+	}
+
+	.logo-MainHeader-BG {
+		width: 100%;
+		position: absolute;
+		top: 0;
+	}
+
+	#MainHeader > section {
+		width: 100%;
+		float: right;
+	}
+
+	ul#GameBox {
+		width: 90%;
+		padding: 0;
+	}
+
+	#GameBox li {
+		width: 33.33%;
+		height: 0;
+		padding-bottom: 33.33%;
+		font-size: 7em;
+	}
+
+	section#Player-One {
+  margin-top: 226px;
+}
+
+.userTurn h3:after {
+	  border-width: 36px 0px 36px 20px;
+}
+
+.userTurn-Next {
+	font-size: 1.325em;
+	line-height: 1.125;
+	  padding: 12px 35px 12px 30px;
+}
+
+.desktopVS {
+	  background: rgb(223, 119, 241);
+  width: 100%;
+  height: 1px;
+  float: left;
+    margin: 45px 0px;
+    position: relative;
+}
+
+.desktopVS:after {
 	display: block;
-	width: 330px;
-	height: 330px;
-	background: blue;
-	margin: 0 auto;
-	padding: 0;
+	content: " VS ";
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	padding: 17px 0 0 6px;
+	font-weight: 700;
+	font-style: italic;
+	font-size: 24px;
+	color: #fdfdfd;
+	background: rgb(223, 119, 241);
+	position: absolute;
+	left: 42.5%;
+	top: -25px;
 }
 
-li {
-	display: inline-block;
-	width: 100px;
-	height: 100px;
-	background: red;
+#Player-Two {
+	position: relative;
 }
-*/
+
+#Player-Two:after {
+	content:" ";
+	display: block;
+	width: 0;
+	height: 0;
+border-width: 0 179px 14px 179px;
+  border-style: solid;
+  border-color: transparent rgb(147, 42, 170) transparent;
+	position: absolute;
+}
+
+
+}
+
+
+.turnYellow {
+	 background-color: rgb(212, 226, 15) !important;
+}
+
+
+
+
+
+
+
+
+

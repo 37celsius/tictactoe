@@ -37,7 +37,7 @@
 			<section id="Player-One">
 
 				<h2>
-					Player 1
+					Player x
 				</h2>
 
 				<ul class="record-Player-One empty-Record">
@@ -55,11 +55,11 @@
 				</span>
 				<span class="border-Right"></span>				
 			</h1>
-
+			<div class="desktopVS"></div>
 			<section id="Player-Two">
 				
 				<h2>
-					Player 2
+					Player o
 				</h2>
 
 				<ul class="record-Player-Two empty-Record">
@@ -74,56 +74,47 @@
 		<main id="MainContent" >
 
 			<ul id="GameBox">
-				<li class="empty-GameBox">
+				<li id="b-0-0" class="empty-GameBox"></li>
 
-				</li>
+				<li id="b-0-1" class="empty-GameBox"></li>
 
-				<li class="active-GameBox">
-						x
-				</li>
+				<li id="b-0-2" class="empty-GameBox"></li>
 
-				<li class="active-GameBox">
-						o
-				</li>
+				<li id="b-1-0" class="empty-GameBox"></li>
 
-				<li class="active-GameBox">
-						x
-				</li>
+				<li id="b-1-1" class="empty-GameBox"></li>
 
-				<li class="active-GameBox">
-						x
-				</li>
+				<li id="b-1-2" class="empty-GameBox"></li>
 
-				<li class="empty-GameBox">
+				<li id="b-2-0" class="empty-GameBox"></li>
 
-				</li>
+				<li id="b-2-1" class="empty-GameBox"></li>
 
-				<li class="active-GameBox">
-						x
-				</li>
-
-				<li class="active-GameBox">
-						x
-				</li>
-
-				<li class="active-GameBox">
-						x
-				</li>
+				<li id="b-2-2" class="empty-GameBox"></li>
 			</ul>
 			
 			<section class="userTurn">
-				<h3 id="Message">Next turn</h3>
-				<span class="userTurn-Next">x</span>
+				<h3 id="Message"><i class="fa fa-lightbulb-o"></i></h3>
+				<span class="userTurn-Next"></span>
 			</section>
 		</main>
 
-		<footer>
-			<h5>&copy; 2015 Beta Ngadiman.</h5>			
-		</footer>
 
 	</div>
 
-	<script src="js/tictac.js"></script>
+			<footer>
+			<h5>&copy; 2015 Beta Ngadiman. <a href="https://generalassemb.ly/" target="_blank">	A General Assembly Project</a>. </h5>			
+		</footer>
+
+	
+	<section id="DialogBox">
+		<h2 id="Winner"></h2>
+		<button type="button" id="RogerButton">Roger</button>
+	</section>
+	
+	<!-- UnderScore -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+	<script type="text/javascript" src="js/tictac.js"></script>
 	
 </body>
 </html>
