@@ -327,10 +327,10 @@ padding: 5px 25px;
 
 /* iPads (portrait and landscape) ----------- */
 @media all and (min-width : 768px) and (max-width : 1024px) {
-	.logo-MainHeader {
+/*	.logo-MainHeader {
 		width: 38%;
   		padding-bottom: 38%;
-	}
+	}*/
 	.border-Left, .border-Right {
 		padding-bottom: 38%;
 	}
@@ -338,8 +338,17 @@ padding: 5px 25px;
 		margin-right: 22%;
 	}
 
-	i.fa.fa-lightbulb-o{
+/*	i.fa.fa-lightbulb-o{
 		font-size: 2.25em;
+	}*/
+
+		i.fa.fa-lightbulb-o {
+  	font-size: 3em;
+	}
+
+		.logo-MainHeader {
+	  width: 41%;
+	  padding-bottom: 41%;
 	}
 
 	.userTurn h3:after {
@@ -364,7 +373,6 @@ padding: 5px 25px;
 	}
   
 }
-
 
 @media all and (min-width : 1025px){
 
@@ -472,11 +480,6 @@ border-width: 0 179px 14px 179px;
 .turnYellow {
 	 background-color: rgb(212, 226, 15) !important;
 }
-
-
-
-
-
 
 
 

@@ -19,32 +19,39 @@ function countScore() {
 	if(playerXScore === 1){
 		$(".record-Player-One.empty-Record li:nth-child(1)").addClass("turnYellow");
 	} else if (playerXScore ===2){
+				$(".logo-MainHeader").css("background-color", "#F4FA03");
 		$(".record-Player-One.empty-Record li:nth-child(2)").addClass("turnYellow");
 	} else if (playerXScore === 3){
 		$(".record-Player-One.empty-Record li:nth-child(3)").addClass("turnYellow");
-		popUpBTNReset();
-	} 
+		popUpBTNResetTotal();}
+	
+	// } else if( playerXScore > 3){
+	// 	popUpBTNResetTotal()
+
+	// }
 
 	if(playerOScore === 1){
 		$(".record-Player-Two.empty-Record li:nth-child(1)").addClass("turnYellow");
 	} else if (playerOScore === 2){
+				$(".logo-MainHeader").css("background-color", "#F4FA03");
 		$(".record-Player-Two.empty-Record li:nth-child(2)").addClass("turnYellow");
 	} else if (playerOScore === 3){
 		$(".record-Player-Two.empty-Record li:nth-child(3)").addClass("turnYellow");
-		popUpBTNReset();
+		popUpBTNResetTotal(); }
+	// } else if( playerOScore > 3){
 
+		
 
-	}
-
+	// }
 }
 
 
 function totalWinReset() {
 	playerXScore = 0;
 	playerOScore = 0;
-	resetGame();
-$(".record-Player-One.empty-Record li").removeClass("turnYellow");
-$(".record-Player-Two.empty-Record li").removeClass("turnYellow");
+	$(".record-Player-One.empty-Record li").removeClass("turnYellow");
+	$(".record-Player-Two.empty-Record li").removeClass("turnYellow");
+	$(".logo-MainHeader").css("background-color", "#fdfdfd");
 
 }
 
@@ -107,6 +114,54 @@ return false;
 });
 };
 
+var popUpBTNResetTotal = function(){
+$('#RogerButton, #mask').on('click', function() { 
+  $('#mask , #DialogBox').fadeOut(300 , function() {
+    $('#mask').remove();
+
+
+ 
+
+    resetGame();
+    totalWinReset()  
+}); 
+return false;
+
+});
+};
+
+
+// var popUpBTNResetTotal = function(){
+// $('#RogerButton, #mask').on('click', function() { 
+//   $('#mask , #DialogBox').fadeOut(300 , function() {
+//     $('#mask').remove();
+
+// 	xTurn = "o";
+// 	count= 0;
+// 	playerXScore = 0;
+// 	playerOScore = 0;
+// 	turn = " ";
+// 	MAX_COUNT = 9;
+// 	$(".record-Player-One.empty-Record li").removeClass("turnYellow");
+// 	$(".record-Player-Two.empty-Record li").removeClass("turnYellow");
+
+// 	box = [
+
+// 		["", "", ""],
+// 		["", "", ""],
+// 		["", "", ""]
+
+// 	];
+
+// 	$("#GameBox li").removeClass("active-GameBox").addClass("empty-GameBox");
+
+// 	$("#GameBox li").html(" ");
+
+// }); 
+// return false;
+
+// });
+// };
 
 
 
@@ -127,7 +182,7 @@ $('#GameBox li').on('click', function(){
 			box[xCord][yCord] = xTurn;
 			// playerOScore += 1;
 			// count +=1;
-			console.log("o " + playerXScore);
+			// console.log("o " + playerXScore);
 
 			$(this).html(xTurn);
 			$(this).removeClass("empty-GameBox").addClass("active-GameBox");
@@ -137,7 +192,7 @@ $('#GameBox li').on('click', function(){
 			$("#Player-Two h2").css("color","#fdfdfd");
 			$("#Player-One h2").css("color","#2F0147");
 			box[xCord][yCord] = xTurn;
-			console.log("x " + playerOScore);
+			// console.log("x " + playerOScore);
 			// playerXScore += 1;
 			// count+=1;
 
@@ -161,18 +216,32 @@ $('#GameBox li').on('click', function(){
 
 			if(xTurn === "x"){
 				popUpBTN();				
-				console.log("x win");
+				// console.log("x win");
 				$("#Winner").html("x win this round");
 				playerXScore++;
-				console.log(playerXScore);
+				// console.log(playerXScore);
 				popUpBTNReset();
+
+				if(playerXScore === 3) {
+					$("#Winner").html("1 more");
+				} else if(playerXScore > 3) {
+					$("#Winner").html("x kick o arse");
+				}
+
 			} else if (xTurn === "o") {
 				popUpBTN();
-				console.log("o win");
+				// console.log("o win");
 				$("#Winner").html("o win this round");
 				popUpBTNReset();
 				playerOScore++;
-				console.log(playerOScore);
+				// console.log(playerOScore);
+
+				if(playerOScore === 3) {
+					$("#Winner").html("1 more");
+				} else if(playerOScore > 3) {
+					$("#Winner").html("o kick x arse");
+		
+				}
 			} 
 
 
@@ -197,7 +266,8 @@ $('#GameBox li').on('click', function(){
 	"Never agree for a stalemate, hack your way out",
 	"Accept who you are, unless you are a serial killer",
 	"I tried to be normal once, Worst two minutes of my life",
-	"I put the pro in procrastinate, tomorrow"
+	"I put the pro in procrastinate, tomorrow",
+	"In real life there's no reset button, deal with it"
 	];
 
 	var $ryt = $('.userTurn-Next');
@@ -214,10 +284,5 @@ $('#GameBox li').on('click', function(){
 	}, 4000);
 
 
-var colorChange = function() {
-
-	$("")
-
-}
 
 
